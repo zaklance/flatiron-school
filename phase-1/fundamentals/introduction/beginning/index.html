@@ -7,5 +7,29 @@
   Core Deliverables
   1. Write a preamble that lets the browser know that this document's type is HTML.
   2. Write a <head> and <body>.
-  3. Link this file to `index.js`, so that the browser loads that file **after** loading the <body>.
--->
+  3. Link this file to `index.js`, so that the browser loads that file **after** loading the <body>. -->
+
+<!-- This preamble tells the browser that our document type is html -->
+<!DOCTYPE html>
+
+<!-- The conteent of the head is the metadata, or non-visual data of our page -->
+<head>
+  <meta lang="en"/>
+  <title>My website!</title>
+<script defer src="./index.js"></script>
+
+</head>
+
+<!-- The body tag is the visual content of the page -->
+<body>
+  <!-- h1, div, img, p, span -->
+  <h1>An Introduction to HTML</h1>
+  <h2>by Sakib Rasul</h2>
+  <div>
+      <h3>Some less important heading</h3>
+  </div>
+  <p>ipssum Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus alias suscipit officiis nisi consequatur, itaque necessitatibus placeat. Consequuntur neque quidem unde maiores eius, consequatur nostrum consectetur totam commodi ullam voluptatem?</p>
+  <img src="https%20goes%20here%20.com" alt="Logo">
+  <a href="UrlGoesHere.com">Link text</a>
+
+</body>
