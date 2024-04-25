@@ -38,7 +38,7 @@ Dom
                    p
 */
 
-
+document.getElementById
 // ~ Read/Select a node
 // -> querySelector is a DOM method that lets us look up nodes by CSS **selector**.
 // -> querySelectorAll is a DOM method that returns an array-like list of nodes that match a CSS selector.
