@@ -21,6 +21,7 @@ form.addEventListener("submit", event => {
   // Prevent default behavior, i.e. redirecting to a backend service.
   event.preventDefault();
   // Get text from input.
+  // const text = form.task.value;
   // OPTION 1: Get the element with querySelector (if the element has a `class` or `id`)
   // const text = document.querySelector("#new-task-description").value;
   // OPTION 2: Get the element with event.target (if the element has a `name`)
