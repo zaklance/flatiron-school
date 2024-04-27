@@ -20,7 +20,7 @@ fetch('https://dog-api.kinduff.com/api/facts?number=1')
 .then((response) => response.json())
 // Using the resulting JS! // data is an array so we can pull the specific data by going to facts and it's first index
 .then((data) => {
-    const span = document.querySelector('#cat');
+    const span = document.querySelector('#dog');
     span.textContent = data.facts[0];
     // is the element I'm working with already in the DOM,
     // if so then select and modify the element, otherwise 
@@ -53,14 +53,10 @@ async function getPokemon(name) {
   getPokemon("ditto");
 
 // ~ Challenge: Make a GET request to an API of your choice!
-// fetch('https://meowfacts.herokuapp.com');
-// .then((response) => response.json())
-// .then((meomw) => {
-//     const cats = document.querySelector('#cat');
-//     cats.textContent = meow.data[0];
-//     // const ulLocation = document.querySelector('body');
-//     // const newUl = document.createElement('ul');
-//     // const newLi = document.createElement('li');
-//     // ulLocation.append(newUl);
-// })
-// .catch((error) => console.log(error));
+fetch('https://meowfacts.herokuapp.com')
+.then((response) => response.json())
+.then((cat) => {
+    const span = document.querySelector('#cat');
+    span.textContent = cat.data[0];
+})
+.catch((error) => console.log(error));
