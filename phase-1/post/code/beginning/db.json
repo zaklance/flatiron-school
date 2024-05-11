@@ -30,19 +30,19 @@
     {
       "id": "ef04",
       "name": "Misu",
-      "age": "15",
+      "age": 15,
       "isACat": true
     },
     {
       "id": "cbe8",
       "name": "Milo",
-      "age": "10",
+      "age": 10,
       "isACat": true
     },
     {
       "id": "f00f",
       "name": "Rocket",
-      "age": "16",
+      "age": 16,
       "isACat": true
     }
   ],
@@ -62,25 +62,25 @@
     {
       "id": "d0a9",
       "name": "Spot",
-      "age": "5",
+      "age": 5,
       "isGoodDog": true
     },
     {
       "id": "f0fa",
       "name": "Nestor",
-      "age": "4",
+      "age": 4,
       "isGoodDog": true
     },
     {
       "id": "6a72",
       "name": "Bud",
-      "age": "8",
+      "age": 8,
       "isGoodDog": true
     },
     {
       "id": "bc9f",
       "name": "Spike",
-      "age": "7",
+      "age": 7,
       "isGoodDog": true
     }
   ]

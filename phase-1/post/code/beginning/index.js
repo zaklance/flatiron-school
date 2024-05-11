@@ -12,7 +12,61 @@ Objectives
 
 */
 
+function handleLiClick(li, dog) {
+    const dogId = dog.id;
+    li.addEventListener("click", () => {
+        fetch(`http://localhost:3000/dogs/${dogId}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify({
+                age: dog.age + 1,
+                isADog: true
+            })
+        })
+        .then(response => response.json())
+        .then(updatedDog => {
+            console.log(updatedDog);
+            li.textContent = `${updatedDog.name} (${updatedDog.age})`;
+        })
+    });
+}
+
+function handleDelete(li, deleteButton, dog) {
+    // Handle clicks on the delete button by making a DELETE request
+    deleteButton.addEventListener("click", () => {
+        fetch(`http://localhost:3000/dogs/${dog.id}`, { method: "DELETE" })
+        .then(response => {
+            // If the deletion was successful...
+            if (response.ok) {
+                // ...then remove the li element from the DOM
+                li.remove();
+                deleteButton.remove();
+            };
+        });
+    });
+}
+
 // Let's try making a GET request to display existing data on the page.
+fetch("http://localhost:3000/dogs")
+.then(response => { return response.json() })
+.then(dogs => {
+    const ul = document.querySelector("#dogs");
+    dogs.forEach(dog => {
+        const li = document.createElement("li");
+        li.textContent = `${dog.name} (${dog.age})`;
+        // Add a delete button to the li
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "X";
+        ul.append(li, deleteButton);
+        handleLiClick(li, dog);
+        handleDelete(li, deleteButton, dog);        
+    });
+});
+
+/*
 fetch("http://localhost:3000/dogs")
 .then(response => response.json())
 .then(dogs => {
@@ -26,6 +80,7 @@ fetch("http://localhost:3000/dogs")
         ul.append(li);
     });
 });
+*/
 
 fetch("http://localhost:3000/cats")
 .then(response => response.json())
@@ -41,7 +96,7 @@ fetch("http://localhost:3000/cats")
 // Now, let's trigger a POST request when the user submits the form,
 // so that they can add data to the database! Remember to think about
 // the event, the target, and the handler when planning a listener.
-/*
+
 document.querySelector("#dogForm").addEventListener("submit", event => {
     event.preventDefault();
     // get information aka event.target
@@ -69,8 +124,8 @@ document.querySelector("#dogForm").addEventListener("submit", event => {
         ul.append(li);
     });
 });
-*/
-/*
+
+
 document.querySelector("#catForm").addEventListener("submit", event => {
     event.preventDefault();
     // get information aka event.target
@@ -98,8 +153,8 @@ document.querySelector("#catForm").addEventListener("submit", event => {
         ul.append(li);
     });
 });
-*/
 
+/*
 const petSelector = document.querySelector('#petSelector');
 if(petSelector.animals.value === "chooseCat") {
     document.querySelector("#petSelector").addEventListener("submit", event => {
@@ -157,6 +212,7 @@ if(petSelector.animals.value === "chooseCat") {
         });
     });
 }
+*/
 
 // 1. Listens for pet type
 // 2. 

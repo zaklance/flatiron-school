@@ -1,0 +1,65 @@
+,
+                    {
+                        "id": "",
+                        "name": "",
+                        "creator": "",
+                        "ec1Name": "",
+                        "ec1Points": [
+                            {
+                                "xyPt1": "",
+                                "xyPt2": "",
+                                "xyPt3": "",
+                                "xyPt4": "",
+                                "xyPt5": "",
+                                "xyPt6": ""
+                            }
+                       ],
+                        "extrudeHeight": "",
+                        "maelstrom": [
+                            {
+                                "centerPt": "",
+                                "radius1": "",
+                                "radius2": "",
+                                "callAngle": ""
+                            }
+                        ],
+                        "tweenCurve": "",
+                        "square1": [
+                            {
+                                "xyPt1": "",
+                                "xyPt2": "",
+                                "xyPt3": "",
+                                "xyPt4": "",
+                                "height": ""
+                            }
+                        ],
+                        "guide": [
+                            {
+                                "xyzPt1": "",
+                                "xyzPt2": "",
+                               "distance": ""
+                            }
+                        ],
+                        "wirecut": [
+                            {
+                                "depth": "",
+                                "selectDelete": ""
+                            }
+                        ],
+                        "square2": [
+                            {
+                                "xyPt1": "",
+                                "xyPt2": "",
+                                "xyPt3": "",
+                                "xyPt4": "",
+                                "height": ""
+                           }
+                        ],
+                        "ec2": [
+                            {
+                                "colorShirt": "",
+                                "colorEye": ""
+                            } 
+                        ],
+                        "email content": "",
+                        "error": ""
