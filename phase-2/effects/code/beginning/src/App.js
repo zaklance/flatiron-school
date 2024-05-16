@@ -10,9 +10,21 @@
      with JSON Server and fetch articles from there on this component's first render.
 
 */
+// Let's import useState() to manage our dynamic articles, and import useEffect() to update those articles on mount!
+import { useState, useEffect } from "react"
 
 export default function App() {
-  const articles = [ { id: 0, title: "Why I Fetch Data", author: "Max the Beagle" } ];
+  // const articles = [ { id: 0, title: "Why I Fetch Data", author: "Max the Beagle" } ];
+  const [ articles, setArticles ] = useState([]);
+  
+  useEffect(() => {
+    fetch('http://localhost:3000/articles')
+    .then(response => response.json())
+    .then(articlesInDb => {
+      console.log("Updating articles...");
+      setArticles(articlesInDb);
+    })
+  }, []);
 
   return (
     <div style={{ minHeight: "100vh",
