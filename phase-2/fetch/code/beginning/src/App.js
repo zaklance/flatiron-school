@@ -14,15 +14,42 @@ Core Deliverables
 */
 
 import Form from './Form';
+import { useState, useEffect } from 'react';
 
 export default function App() {
+  const [ menu, setMenu ] = useState([]);
+
+  useEffect(() => {
+    console.log('Fetching dishes...')
+    fetch('http://localhost:3000/menu')
+    .then(response => response.json())
+    .then(menuInDb => setMenu(menuInDb))
+  }, []);
+
+  console.log(menu);
+
+  const post = (event, name, price) => {
+    event.preventDefault();
+    console.log(name);
+    console.log(price);
+
+    // fetch{
+
+    // }
+    // .then()
+    // .then()
+
+  }
+
   return (
     <main>
       <h1>Chez Flatiron</h1>
       <section>
         <h2>Featured Dish: NAME!</h2>
-        <div>NAME | $PRICE<br/></div>
-        <h3>Submit a New Dish! <Form /></h3>
+        {menu.map(dish => 
+          <div key={dish.id}>{dish.name} | ${dish.price}</div>
+        )}
+        <h3>Submit a New Dish! <Form postRequest={post} /></h3>
       </section>
     </main>
   );
