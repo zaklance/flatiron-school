@@ -1,9 +1,9 @@
 import React from "react"
 
-function Search() {
+function Search({ query, setQuery }) {
     return(
         <div className="search-container">
-            <input type="text" placeholder="Search names..." onChange={() => console.log("Searching...")} />
+            <input type="text" placeholder="Search names..." value={query} onChange={event => setQuery(event.target.value)} />
         </div>
     );
 }
